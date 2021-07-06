@@ -1,1 +1,1 @@
-# comptheory2020
+# comptheory
