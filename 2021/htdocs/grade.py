@@ -1,26 +1,25 @@
-import csv
 from csv2html import id2item2score
 
 hws = [f'hw{i+1}' for i in range(7)]
 mids = [f'mid{i+1}' for i in range(2)]
 
-hws_ratio = 0.28
-mids_ratio = 0.52
-final_ratio = 0.2
+hws_ratio = 0.25
+mids_ratio = 0.48
+final_ratio = 0.27
 
 gpa  = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'F']
-dist = [  5,  18,    6,    2,   4,    5,    5,   6,   10,   3]
+dist = [  7, 10, 9, 8, 8, 7, 5, 6, 3, 8]
 
 def get_avg(item2score):
     avg = 0.0
     for item, score in item2score.items():
         if item != 'grade' and score != '':
             score = float(score)
-            if item in hws:
-                avg += score / 7.5 * hws_ratio
-            elif item in mids:
+            if 'hw' in item:
+                avg += score / 6.5 * hws_ratio
+            elif 'mid' in item:
                 avg += score / 2 * mids_ratio
-            elif item == 'final':
+            elif 'final' in item :
                 avg += score * final_ratio
     return avg
 
