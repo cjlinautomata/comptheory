@@ -1,6 +1,6 @@
 from csv2html import id2item2score
 
-hws = [f'hw{i+1}' for i in range(7)]
+hws = [f'hw{i+1}' for i in range(6)]
 mids = [f'mid{i+1}' for i in range(2)]
 
 hws_ratio = 0.25
@@ -8,7 +8,7 @@ mids_ratio = 0.48
 final_ratio = 0.27
 
 gpa  = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'F']
-dist = [  7, 10, 9, 8, 8, 7, 5, 6, 3, 8]
+dist = [   7,  10,    9,    8,   8,    7,    5,   6,    3,   8]
 
 def get_avg(item2score):
     avg = 0.0
